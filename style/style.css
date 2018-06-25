@@ -1,0 +1,215 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 16-Jul-2017, 16:59:01
+    Author     : peltos
+*/
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700');
+
+html, body{
+    height:100%;
+    width:100%;
+}
+
+body{
+    font-size:18px;
+    background-color:#eee;    
+    background-image: url(../img/shadow.svg);
+    background-size: 66%;
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    background-attachment: fixed;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+
+/* MAIN HEADER CLASSES */
+
+.main-header{
+    height:75px;
+    background:#555;
+    display: flex;
+    flex-direction: row;
+}
+.main-header .main-header--image{
+    height:55px;
+    padding:10px;
+}
+.main-header .main-header--shape:before{
+    content:"";
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 75px 75px 0 0;
+    border-color: #555555 transparent transparent transparent;
+    display:block;
+    float:left;
+}
+.main-header .main-header--shape{
+    height:75px;
+    background:#333;
+    width:calc(100% - 221.34px);
+    margin-left:50px;
+}
+
+
+
+/* INTRO CLASSES */
+
+.intro {
+    width:100%;
+    max-width:400px;
+    margin: 0 auto;
+    background: lightgray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 1em;
+}
+
+/* MAIN CONTAINER CLASSES */
+
+.main-container {
+    width:100%;
+    max-width:960px;
+    margin: 0 auto;
+}
+
+.content-container {
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    background: lightgray;
+    padding: .5em;
+    display:none;
+}
+.content--header{
+    width:100%;
+    text-align: center;
+
+}
+.content--header__generation{
+    font-weight: 900;
+}
+.content--main{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.content--main__item{
+    width:100%;
+    display: flex;
+    align-items: center;
+    padding:.5em;
+}
+
+.content--main__item:hover .content--main__item__image{
+    animation: spin 1s infinite;
+    animation-timing-function: linear;
+
+}
+.content--main__item:hover .content--main__item__image img{
+    animation: spin 1s infinite;
+    animation-timing-function: linear;
+    animation-direction: reverse;
+}
+
+.content--main__item:hover{
+    background: #dedede;
+}
+.content--main__item p{
+    margin-left:1em;
+}
+.content--main__item__image:before{
+    content: "";
+    display: flex;
+    width: 25%;
+    height: 25%;
+    background: #ddd;
+    position: absolute;
+    top: calc(50% - 12.5%);
+    left: calc(50% - 12.5%);
+    border-radius: 50%;
+    z-index: 1;
+}
+.content--main__item__image {
+    position: relative;
+    background-color: #db8475;
+    border-radius: 50%;
+    height: 5em;
+    width: 5em;
+}
+.content--main__item__image:after {
+    content: "";
+    display: flex;
+    width: 100%;
+    height: 50%;
+    background: #eee;
+    position: absolute;
+    top: 50%;
+    border-radius: 0 0 200px 200px;
+}
+
+.content--main__item__image img{
+    padding:.5em;
+    width:4em;
+    position: relative;
+    z-index: 1;
+}
+
+
+
+.loadbar{
+    height:20px;
+    width:0%;
+    background:black;
+    align-self: flex-start;
+}
+
+.counter{
+    font-size:2em;
+    font-weight: 900;
+}
+@media only screen and (min-width: 640px) {
+    .content--main__item{
+        width:calc(50% - 1em);
+    }
+    .content--main__item__image {
+        height: 7em;
+        width: 7em;
+    }
+    .content--main__item__image img {
+        width:6em;
+    }
+}
+
+@media only screen and (min-width: 960px) {
+    .intro,
+    .content-container{
+        border-radius: 20px;
+    }
+}
+
+
+
+@-webkit-keyframes spin {
+    0%   { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+@-moz-keyframes spin {
+    0%   { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+@-o-keyframes spin {
+    0%   { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+@keyframes spin {
+    0%   { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
